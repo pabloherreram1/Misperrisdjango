@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE htm>
+<htm lang="es-CL">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">    
+        <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Mis Perris</title>
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: mediumseagreen">
+  <a href="/index/" class="navbar-brand d-flex w-50 mr-auto">
+    <img src="{% static "img/logo.png" %}" width="178" height="30" alt="">
+  </a>
+  <center>
+    <div class="perro">
+        <img style="width: 400px; height: 80px;" src="../../static/img/perro.png" alt="">
+    </div>
+</center>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+      <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+          <li class="nav-item">
+              <a class="nav-link" href="/index/">Inicio</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Quienes somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="/listado/">Listado Perros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/registro_perro/">Registrar Perro</a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/cerrarsesion">Cerrar Sesion</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="/login/">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/registro_persona/">Registrarse</a>
+              </li>
+              {% endif %}
+          </li>
+      </ul>
+  </div>
+</nav>
+    <div class="container">
+        <h2>Perros registrados</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pe in perros %}
+            <tr>
+                <td><img src="/media/fotos/{{ pe.foto }}" alt="Error foto no encontrada"></td>
+                <td>{{ pe.nombre }}</td>
+                <td>{{ pe.raza }}</td>
+                <td>{{ pe.descripcion }}</td>
+                <td>{{ pe.estado }}</td>    
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+    </div>
+                <!-- JS Extras -->
+                <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+                <script src="{% static "js/popper.js" %}"></script>
+                <script src="{% static "js/jquery.validate.js" %}"></script>
+                <script src="{% static "js/app.js" %}"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

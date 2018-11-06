@@ -1,0 +1,80 @@
+.barra{
+    height: 47px;
+    width: 1200px;
+    background-color: rgb(92, 159, 137);
+}
+
+.letra{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.perro{
+    height: 200px;
+    width: 1200px;
+    background-color: rgb(97, 187, 157)
+}
+
+.barras{
+    height: 70px;
+    width: 1200px;
+    background-color: rgb(93, 174, 146)
+}
+
+.casilla{
+    float: center;
+    height: 450px;
+    width: 1200px;
+}
+
+.contenidoi{
+    float: left;
+    height:450px ;
+    width: 600px;
+    background-color: white;
+}
+
+.contenidod{
+    float:right;
+    height: 450px;
+    width: 600px;
+    background-color: white;
+}
+
+hr
+{
+    height: 10;
+    width: 50%;
+    position: relative;
+    left: 10;
+    background-color: black;
+}
+
+
+
+.titulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.tit{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+.fuente{
+    font-size:10px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    color: black;
+    background:#ffffff;
+    border-color:black;
+    width:80px;
+    height:30px;
+}
+
+.head{
+    height: 100px;
+    width: 1200px;
+    background-color: rgb(98, 98, 98);
+}

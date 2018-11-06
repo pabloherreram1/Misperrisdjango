@@ -1,0 +1,40 @@
+{% extends 'Complemento/body.htm' %}
+{% block head %}
+
+{% endblock head%}
+
+{% block body %}
+<body>
+    
+    <div class="row ">
+        <div class="col-md-4 ">
+        </div>
+            <div class="col-md-4 ">
+                    <H1>Inicio de Sesion</H1>    
+    <form method="POST" class="form-signin" action="{% url "iniciar" %}">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="col">
+                <label for="inputRut" >Run</label>
+                <input type="text" id="inputRut" name="rut" class="form-control tamaño_formulario" placeholder=" Ingrese Run" required autofocus> 
+            </div>
+          </div>
+          <br>
+        <div class="form-row">
+            <div class="col">
+                <label for="inputPassword" >Contraseña</label>
+                <input type="password" name="contrasenia" id="inputPassword" class="form-control tamaño_formulario" placeholder="Ingrese Contraseña" required>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-lg btn-primary " type="submit">Iniciar Sesión</button>
+        <br>
+        <a href="/password/recovery/">¿Olvidaste tu contraseña?</a>   
+    </div>
+</div>
+    </br>
+  
+    </form>
+</body>
+            
+{% endblock body %}

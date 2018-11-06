@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE htm>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">    
+  <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Mis Perris</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: mediumseagreen">
+    <a href="/index/" class="navbar-brand d-flex w-50 mr-auto">
+      <img src="{% static "img/logo.png" %}" width="178" height="30" alt="">
+    </a>
+    <center>
+      <div class="perro">
+          <img style="width: 400px; height: 80px;" src="../../static/img/perro.png" alt="">
+      </div>
+  </center>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="/index/">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Quienes somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/">Ingresar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/registro_persona/">Registrarse</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+
+
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+      <form action="/registro/crear/" method="POST">
+        {% csrf_token %}
+        <div class="column">
+      <div class="form-group">
+        <label for="email">Correo Electronico</label>
+        <input type="email" class="form-control tamaño_formulario"  placeholder="Ingrese Email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="run">Run</label>
+        <input type="text" class="form-control tamaño_formulario"  placeholder="Ingrese Run" name="run" required>
+      </div>
+      <div class="form-group">
+        <label for="contrasenia">Contraseña</label>
+        <input type="password" class="form-control tamaño_formulario"  placeholder="Ingrese Contraseña" name="contrasenia" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmacion">Confirme Contraseña</label>
+        <input type="password" class="form-control tamaño_formulario"  placeholder="Ingrese Contraseña nuevamente" name="confirmacion" required>
+      </div>
+      <div class="form-group">
+          <label for="nombreC">Nombre completo</label>
+          <input type="text" class="form-control tamaño_formulario"  placeholder="Ingrese Nombre completo" name="nombreC" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control tamaño_formulario" max="2001-01-01" placeholder="Ingrese fecha de nacimiento" name="fecha_nacimiento" required>
+          </div>
+          <div class="form-group">
+              <label for="telefono">Telefono de Contacto</label>
+              <input type="number" class="form-control tamaño_formulario "  placeholder="Ingrese Numero telefonico" name="telefono" required>
+          </div>
+                  <div class="form-group">
+                      <label for="region">Región</label>
+                      <select name="region" class="form-control tamaño_formulario"  id="region" required>
+                          <option hidden>Seleccione Regíon</option>
+                      </select>
+                  </div>    
+                  <div class="form-group">
+                      <label for="comuna">Comuna</label>
+                      <select class="form-control tamaño_formulario" name="comuna " id="comuna" required >
+                          <option hidden>Seleccione Comuna</option>
+                      </select>
+                      <div>
+                  <div>     
+                        <div class="form-group">
+                                <label for="vivienda">Tipo de vivienda</label>
+                                <select class="form-control tamaño_formulario" name="vivienda" id="vivienda" required>
+                                  <option>Casa con patio grande</option>
+                                  <option>Casa con patio pequeño</option>
+                                  <option>Casa sin patio</option>
+                                  <option>Departamento</option>
+                                </select>
+                        </div>                           
+          </div>
+        </div>
+      <button type="submit" class="btn ">Registrarse</button>
+    </form>
+    </div>
+</div>
+                <!-- JS Extras -->
+                <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+                <script src="{% static "js/popper.js" %}"></script>
+                <script src="{% static "js/jquery.validate.js" %}"></script>
+                <script src="{% static "js/app.js" %}"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                <script src="{% static "js/forms.js" %}"></script>
+    <body>
+    <htm>

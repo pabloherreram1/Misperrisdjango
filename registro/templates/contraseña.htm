@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE htm>
+<htm lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">    
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Mis Perris</title>
+</head>
+<body>
+    <div id="1">
+        <p>Para la recuperación de la contraseña responda la siguiente pregunta</p>
+        <h2>¿Cual es el nombre de su primera mascota?</h2>
+        <input type="text" class="form-control tamaño_formulario" placeholder="Ingrese primera mascota">
+        <br>
+        <button onclick="displaySecond()" type="button" class="btn btn-primary">Recuperar contraseña</button>
+    </div>
+
+    <div id="2" style="display:none;">
+        <h2>Ingrese Contraseña nueva</h2>
+        <input type="password" class="form-control tamaño_formulario" placeholder="Ingrese contraseña">
+        <h2>Ingrese nuevamente contraseña</h2>
+        <input type="password" class="form-control tamaño_formulario" placeholder="Ingrese contraseña">
+        <br>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+    </div>
+
+    <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+    <script src="{% static "js/popper.js" %}"></script>
+    <script src="{% static "js/jquery.validate.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static "js/forms.js" %}"></script>
+</body>
+</htm>
